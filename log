@@ -1,0 +1,74 @@
+Script started on 2022-03-03 01:44:41+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="211" LINES="50"]
+]0;soulealbridg@cs400vm: ~/project1/group/Project1_BX_red[01;32msoulealbridg@cs400vm[00m:[01;34m~/project1/group/Project1_BX_red[00m$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   log[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;soulealbridg@cs400vm: ~/project1/group/Project1_BX_red[01;32msoulealbridg@cs400vm[00m:[01;34m~/project1/group/Project1_BX_red[00m$ git log -1
+[?1h=[33mcommit f2af39aaab6fb0fca3a0bd44c641fda20872b6d7[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m[m
+Author: Nicholas Soule-Albridge <soulealbridg@wisc.edu>[m
+Date:   Thu Mar 3 01:42:29 2022 +0000[m
+[m
+    Added 2 more tests to AlgorithmEngineerTests.java for the code review[m
+[K[?1l>]0;soulealbridg@cs400vm: ~/project1/group/Project1_BX_red[01;32msoulealbridg@cs400vm[00m:[01;34m~/project1/group/Project1_BX_red[00m$ make clean
+rm *.class
+rm: cannot remove '*.class': No such file or directory
+make: *** [Makefile:102: clean] Error 1
+]0;soulealbridg@cs400vm: ~/project1/group/Project1_BX_red[01;32msoulealbridg@cs400vm[00m:[01;34m~/project1/group/Project1_BX_red[00m$ ls
+AlgorithmEngineerTests.java  HashTableSortedSets.java   IShow.java                  KeyValuePair.java  ShowHolder.java           ShowSearcherBackendPlaceholder.java        log
+BackendDeveloperTests.java   HashtableMap.java          IShowLoader.java            Makefile           ShowLoader.java           ShowSearcherFrontend.java                  tv_shows.csv
+DataWranglerTests.java       HashtableMapTests.java     IShowSearcherBackend.java   MapADT.java        ShowSearcherApp.java      Surya_ShowSearcherBackendPlaceholder.java
+FrontendDeveloperTests.java  IHashTableSortedSets.java  IShowSearcherFrontend.java  Show.java          ShowSearcherBackend.java  TextUITester.java
+]0;soulealbridg@cs400vm: ~/project1/group/Project1_BX_red[01;32msoulealbridg@cs400vm[00m:[01;34m~/project1/group/Project1_BX_red[00m$ make runTests
+javac MapADT.java
+javac KeyValuePair.java
+javac HashtableMap.java
+Note: HashtableMap.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+javac IHashTableSortedSets.java
+javac HashTableSortedSets.java
+javac IShowSearcherBackend.java
+javac ShowSearcherBackend.java
+javac IShowSearcherFrontend.java
+javac ShowSearcherFrontend.java
+javac Show.java
+javac ShowSearcherBackendPlaceholder.java
+javac TextUITester.java
+javac FrontendDeveloperTests.java
+java FrontendDeveloperTests
+Test 1 passed
+Test 2 passed
+Test 3 passed
+Test 4 passed
+Test 5 passed
+Test 6 passed
+Test 7 passed
+javac BackendDeveloperTests.java
+java BackendDeveloperTests
+test1: true
+test2: true
+test3: true
+test4: true
+test5: true
+test6: true
+test7: true
+test8: true
+test9: true
+javac AlgorithmEngineerTests.java
+javac HashtableMapTests.java
+java AlgorithmEngineerTests
+true
+java HashtableMapTests
+true
+javac DataWranglerTests.java
+java DataWranglerTests
+test passed
+]0;soulealbridg@cs400vm: ~/project1/group/Project1_BX_red[01;32msoulealbridg@cs400vm[00m:[01;34m~/project1/group/Project1_BX_red[00m$ exit
+exit
+
+Script done on 2022-03-03 01:45:42+00:00 [COMMAND_EXIT_CODE="0"]

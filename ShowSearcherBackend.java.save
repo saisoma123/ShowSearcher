@@ -1,0 +1,60 @@
+public class ShowSearcherBackend implements IShowSearcherBackend
+{
+	private HashTableSortedSets set1;
+	private HashTableSortedSets set2;
+	
+	public void addShow(IShow show);
+	{
+		String showTitle = show.getTitle();
+		String[] split;
+		if(!showTitle.contains("\"");
+		{
+			split =  showTitle.split(" ");
+		}
+		else
+		{
+				
+		}
+		for(String k: split)
+		{
+			set1.addShow(k, show);
+		}		
+		set2.add(show.getYear(), show);
+
+
+	}
+	
+	public int getNumberOfShows()
+	{
+
+	}
+	
+	public void setProviderFilter(String provider)
+	{
+
+
+	}
+
+	public boolean getProviderFilter(String provider)
+	{
+
+	}
+
+	public void toggleProviderFilter(String provider)
+	{
+
+	}
+
+	public List<IShow> searchByTitleWord(String word)
+	{
+
+
+	}
+
+	public List<IShow) searchByYear(int year)
+	{
+	
+	}
+
+
+}

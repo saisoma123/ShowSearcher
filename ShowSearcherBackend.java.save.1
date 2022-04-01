@@ -1,0 +1,89 @@
+public class ShowSearcherBackend implements IShowSearcherBackend
+{
+	private HashTableSortedSets<String,List<IShow>> set1;
+	private HashTableSortedSets<Integer,List<IShow>> set2;
+	private int size;
+	private HashTableSortedSets<String, Boolean> providers;
+
+	public ShowSearcherBackend()
+	{
+		set1 = new HashTableSortedSets<String, IShow>();
+		set2 = new HashTableSortedSets<Integer, IShow>();
+		providers = new HashTableSortedSets<String, Boolean>();
+		size = 0;
+		providers.put("Netflix", true);
+		providers.put("Hulu", true);
+		providers.put("Prime Video", true);
+		providers.put("Disney+", true);
+	}
+	public void addShow(IShow show);
+	{
+		String showTitle = show.getTitle();
+		String[] split  = showTitle.split(" ");
+		for(String k: split)
+		{
+			set1.add(k, show);
+		}
+		set2.add(show.getYear(), show);
+		size++;
+
+	}
+
+	public int getNumberOfShows()
+	{
+		return size;
+	}
+
+	public void setProviderFilter(String provider)
+	{
+		providers.put(provider, true);
+
+	}
+
+	public boolean getProviderFilter(String provider)
+	{
+		return providers.get(provider);
+	}
+
+	public void toggleProviderFilter(String provider)
+	{
+		providers.put(provider, !providers.get(provider));
+	}
+
+	public List<IShow> searchByTitleWord(String word)
+	{
+		List<IShow> titles = set1.get(word);
+		for(String key: providers.keySet())
+		{
+			for(IShow show: titles)
+			{
+				if(!providers.get(key) && !show.isAvailableOn(key) && titles.contains(show))
+				{
+					titles.remove(show);
+				}
+			}
+		}
+		Collections.sort(titles, Collections.reverseOrder());
+		return titles;
+
+	}
+
+	public List<IShow> searchByYear(int year)
+	{
+		List<IShow> titles = set2.get(year);
+                for(String key: providers.keySet())
+                {
+                        for(IShow show: titles)
+                        {
+                                if(!providers.get(key) && !show.isAvailableOn(key) && titles.contains(show))
+                                {
+                                        titles.remove(show);
+                                }
+                        }
+                }
+		Collections.sort(titles, Collections.reverseOrder());
+		return titles;
+	}
+
+
+}
